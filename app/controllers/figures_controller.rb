@@ -12,10 +12,10 @@ class FiguresController < ApplicationController
     @titles.each do |title|
       @figure.titles << Title.find(title)
     end
-    binding.pry
+    #binding.pry
     @landmarks = params[:figure][:landmark_ids]
     @landmarks.each do |landmark|
-      @figure.landmarks << Landmark.find(landmark)
+      @figure.landmarks << Landmark.create(landmark)
     end
     @figure.save
   end
