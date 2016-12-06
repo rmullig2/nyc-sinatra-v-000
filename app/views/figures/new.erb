@@ -1,0 +1,14 @@
+<html>
+  <h1>Create a new Figure</h1>
+  <form action="/figures" method="POST">
+    <%Figure.all.each do |figure|%>
+      <%=figure.name%><br>
+      <%figure.titles.each do |title|%>
+      <p>Title: <%=title.name%>  Title Ids: <%=title.id%><br><%end%>
+      <%figure.landmarks.each do |landmark|%>
+      <p>Landmark: <%=landmark.name%>  Landmark Ids: <%=landmark.id%><br><%end%>
+    <%end%><br>
+    <input type="hidden" name="message" value="Successfully created song."/>
+    <input type="submit" value="Create">
+  </form>
+</html>
