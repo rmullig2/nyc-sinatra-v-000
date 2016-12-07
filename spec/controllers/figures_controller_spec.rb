@@ -46,7 +46,6 @@ describe FiguresController do
     figure = Figure.last
     expect(Figure.all.count).to eq(3)
     expect(figure.name).to eq("Doctor Who")
-    #binding.pry
     expect(figure.landmarks).to include(Landmark.first)
   end
 
@@ -55,6 +54,7 @@ describe FiguresController do
     fill_in :figure_name, :with => "Doctor Who"
     fill_in :new_title, :with => "Time Lord"
     click_button "Create New Figure"
+    #binding.pry
     figure = Figure.last
     title = Title.last
     expect(Figure.all.count).to eq(3)
